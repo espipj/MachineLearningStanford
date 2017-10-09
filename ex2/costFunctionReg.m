@@ -21,10 +21,10 @@ grad = zeros(size(theta));
 
 theta0 = [0; theta(2:end)]; %Sutitutes first row on theta with 0 for not using j=0
 
-J=(1/m)*sum((-y.*(log(sigmoid(X*theta))))-((1-y).*log(1-sigmoid(X*theta))))+ ((lambda/2*m)*theta0'*theta0);
+J=(1/m)*sum((-y.*(log(sigmoid(X*theta))))-((1-y).*log(1-sigmoid(X*theta))))+ ((lambda/(2*m))*theta0'*theta0);
 
 
-grad=(1/m) * (X'*(sigmoid(X*theta0)-y));
+grad=(1/m).*(X'*(sigmoid(X*theta)-y)) + (lambda*theta0)/m;
 
 % =============================================================
 
