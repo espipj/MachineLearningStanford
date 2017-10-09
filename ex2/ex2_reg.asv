@@ -108,7 +108,7 @@ initial_theta = zeros(size(X, 2), 1);
 
 % Set regularization parameter lambda to 1 (you should vary this)
 lambda1 = 1;
-lambda2 = 0.2;
+lambda2 = 0.5;
 lambda3 = 0;
 lambda4 = 50;
 
@@ -122,7 +122,7 @@ options = optimset('GradObj', 'on', 'MaxIter', 400);
 % Plot Boundary
 plotDecisionBoundary(theta, X, y);
 hold on;
-title(sprintf('lambda = %g', lambda1))
+title(sprintf('lambda = %g', lambda))
 
 % Labels and Legend
 xlabel('Microchip Test 1')
@@ -132,12 +132,12 @@ legend('y = 1', 'y = 0', 'Decision boundary')
 hold off;
 % Optimize
 [theta, J, exit_flag] = ...
-	fminunc(@(t)(costFunctionReg(t, X, y, lambda2)), initial_theta, options);
+	fminunc(@(t)(costFunctionReg(t, X, y, lambda)), initial_theta, options);
 
 % Plot Boundary
 plotDecisionBoundary(theta, X, y);
 hold on;
-title(sprintf('lambda = %g', lambda2))
+title(sprintf('lambda = %g', lambda))
 
 % Labels and Legend
 xlabel('Microchip Test 1')
@@ -147,12 +147,12 @@ legend('y = 1', 'y = 0', 'Decision boundary')
 hold off;
 % Optimize
 [theta, J, exit_flag] = ...
-	fminunc(@(t)(costFunctionReg(t, X, y, lambda3)), initial_theta, options);
+	fminunc(@(t)(costFunctionReg(t, X, y, lambda)), initial_theta, options);
 
 % Plot Boundary
 plotDecisionBoundary(theta, X, y);
 hold on;
-title(sprintf('lambda = %g', lambda3))
+title(sprintf('lambda = %g', lambda))
 
 % Labels and Legend
 xlabel('Microchip Test 1')
@@ -162,12 +162,12 @@ legend('y = 1', 'y = 0', 'Decision boundary')
 hold off;
 % Optimize
 [theta, J, exit_flag] = ...
-	fminunc(@(t)(costFunctionReg(t, X, y, lambda4)), initial_theta, options);
+	fminunc(@(t)(costFunctionReg(t, X, y, lambda)), initial_theta, options);
 
 % Plot Boundary
 plotDecisionBoundary(theta, X, y);
 hold on;
-title(sprintf('lambda = %g', lambda4))
+title(sprintf('lambda = %g', lambda))
 
 % Labels and Legend
 xlabel('Microchip Test 1')
