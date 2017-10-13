@@ -24,7 +24,7 @@ p = zeros(size(X, 1), 1);
 X = [ones(m, 1) X];
 aux=sigmoid(X*Theta1');
 
-aux = [ones(size(aux,1), 1) aux];
+aux = [ones(size, 1) X];
 aux=sigmoid(aux*Theta2');
 
 [p_max,i] = max(aux,[],2);
