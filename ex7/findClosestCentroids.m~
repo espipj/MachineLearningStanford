@@ -23,15 +23,7 @@ idx = zeros(size(X,1), 1);
 
 for i=1:size(X,1)
     min_d=inf;
-    for k=1:K
-        dif=X(i,:)'-centroids(k,:)';
-        d=dif'*dif;
-        if(d<min_d)
-            idx(i)=k;
-            min_d=d;
-        end
-    end
-end
+    
 
 
 

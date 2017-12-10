@@ -26,11 +26,8 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
-%Recorre en un for cada uno de los centroids, para cada uno de ellos
-%busca en X los indices de aquellos que tienen idx asignado a i(centroid)
-%hace la media
 for i=1:K
-    centroids(i,:)=mean(X(find(idx==i),:));
+    centroids(i=
 end
 
 

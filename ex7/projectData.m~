@@ -19,8 +19,7 @@ Z = zeros(size(X, 1), K);
 %
 U_reducida=U(:,1:K)
 for i=1:size(X,1)
-    Z(i,:)=(U_reducida'*X(i,:)')';
-end
+    Z(i,:)=(U_reducida'*X
 
 
 
